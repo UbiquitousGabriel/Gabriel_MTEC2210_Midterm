@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    // public AudioSource (PUT AUDIO NAME HERE);
     public float speed = 5;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,23 @@ public class playerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bomb")
-        //Debug.Log("collided");
-        Destroy(gameObject);
+        {
+            //Debug.Log("collided");
+            Destroy(gameObject);
+        }
+
+
+        if (collision.tag == "Pearl")
+        {
+            // (AUDIO NAME HERE).Play()
+            //var renderer = GetComponent<Renderer>();
+            //if (renderer != null)
+            //{
+            //    renderer.enabled = false;
+            //}
+
+            Destroy(collision.gameObject/*,(AUDIO NAME HERE).clip.length*/);
+        }
+            
     }
 }
