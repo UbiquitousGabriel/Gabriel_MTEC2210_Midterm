@@ -34,8 +34,8 @@ public class playerMovement : MonoBehaviour
         if (collision.tag == "Bomb")
         {
             //Debug.Log("collided");
-            Destroy(gameObject);
             audioSource.PlayOneShot(ScreamAudio);
+            Destroy(gameObject);
 
         }
 
