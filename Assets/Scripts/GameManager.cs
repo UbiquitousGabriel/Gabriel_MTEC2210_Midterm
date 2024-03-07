@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip ScreamAudio;
+
+    public int score;
+    public TextMeshPro scoreText;
 
     [Range (1,10)] public int cointCount = 5;
     private void Start()
@@ -51,4 +55,12 @@ public class GameManager : MonoBehaviour
         return temp;
     }
 
+    void Update()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
+    public void IncreaseScore()
+    {
+        score += 1;
+    }
 }

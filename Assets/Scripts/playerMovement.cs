@@ -10,7 +10,7 @@ public class playerMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip ChompAudio;
     public AudioClip ScreamAudio;
-
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class playerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bomb")
         {
@@ -50,6 +50,7 @@ public class playerMovement : MonoBehaviour
             //}
             audioSource.PlayOneShot(ChompAudio);
             Destroy(collision.gameObject/*,(AUDIO NAME HERE).clip.length*/);
+            gameManager.IncreaseScore();
         }
 
         if (collision.tag == "Hazard")
