@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class playerMovement : MonoBehaviour
 {
     // public AudioSource (PUT AUDIO NAME HERE);
     public float speed = 5;
+    public AudioSource audioSource;
+    public AudioClip ChompAudio;
+    public AudioClip ScreamAudio;
 
 
     // Start is called before the first frame update
@@ -31,6 +35,8 @@ public class playerMovement : MonoBehaviour
         {
             //Debug.Log("collided");
             Destroy(gameObject);
+            audioSource.PlayOneShot(ScreamAudio);
+
         }
 
 
@@ -42,9 +48,14 @@ public class playerMovement : MonoBehaviour
             //{
             //    renderer.enabled = false;
             //}
-
+            audioSource.PlayOneShot(ChompAudio);
             Destroy(collision.gameObject/*,(AUDIO NAME HERE).clip.length*/);
         }
-            
+
+        if (collision.tag == "Hazard")
+        {
+            //Debug.Log("collided");
+            Debug.Log("Transition");
+        }
     }
 }

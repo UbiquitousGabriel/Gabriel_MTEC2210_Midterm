@@ -6,10 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public GameObject pearlPrefab;
     public GameObject bombPrefab;
+    public GameObject hazardPrefab;
     public Transform northPoint;
     public Transform southPoint;
     public Transform westPoint;
     public Transform eastPoint;
+
+    public AudioSource audioSource;
+    public AudioClip ScreamAudio;
 
     [Range (1,10)] public int cointCount = 5;
     private void Start()
@@ -17,6 +21,7 @@ public class GameManager : MonoBehaviour
         //SpawnCoin();
         InvokeRepeating("SpawnPearl", 2, 2);
         InvokeRepeating("SpawnBomb", 2, 2);
+        InvokeRepeating("SpawnHazard", 2, 2);
 
     }
 
@@ -30,6 +35,10 @@ public class GameManager : MonoBehaviour
         GameObject bombClone = Instantiate(bombPrefab, SpawnPos(), Quaternion.identity);
     }
 
+    public void SpawnHazard()
+    {
+        GameObject hazardClone = Instantiate(hazardPrefab, SpawnPos(), Quaternion.identity);
+    }
 
 
     private Vector2 SpawnPos()
