@@ -789,8 +789,8 @@ MonoBehaviour:
   southPoint: {fileID: 1442902123118356308, guid: 5894d3343ac535a4ea08773da74f68f2, type: 3}
   westPoint: {fileID: 1929083856965753733, guid: 2e19e2e6ea5052c4da9bdc76f2114517, type: 3}
   eastPoint: {fileID: 8372603683264122001, guid: 1cdcc01d45ffbff45bdbef3ab47eba72, type: 3}
-  audioSource: {fileID: 0}
-  ScreamAudio: {fileID: 0}
+  audioSource: {fileID: 1703629181}
+  ScreamAudio: {fileID: 8300000, guid: 465a1ee3f60d08146bd95d80d8f5d8e6, type: 3}
   score: 0
   scoreText: {fileID: 599024487}
   cointCount: 5
