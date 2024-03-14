@@ -102,6 +102,8 @@ MonoBehaviour:
   minSpeed: -5
   maxSpeed: -10
   rb: {fileID: 1179572637172171846}
+  audioSource: {fileID: 0}
+  ScreamAudio: {fileID: 8300000, guid: 465a1ee3f60d08146bd95d80d8f5d8e6, type: 3}
 --- !u!50 &1179572637172171846
 Rigidbody2D:
   serializedVersion: 4
